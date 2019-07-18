@@ -1,5 +1,5 @@
 // // game button logic
-// easy game has 4 boxes, medium has 9 hard has 16. Create rray of 16 colors. 
+// easy game has 4 boxes, medium has 8 hard has 16. Create array of 16 colors. 
 // create empty array, and each timethe game restarts, give it random numbers up to the length of the amount of game boxes. After boxes are created an given a color, as well as a number, give that array to itself several times, then shuffle. this will be the games logic for deciding what order the boxes will flash in. 
 
 let boxNumber = []
@@ -8,10 +8,10 @@ let boxPosition =['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
 
 let main = document.querySelector('main')
 
-// boxes will eventually be connected to difficulty level
+// boxes deterimined by difficulty level
 let boxes 
 
-//turn counter to control logic
+//Below controls the game logic, and needs to be reset on game reset
 let turn = 1	
 let counter = 0 
 let interval = null;
@@ -19,17 +19,17 @@ let pressNum = 0
 let speed 
 let score = 0
 let increment 
+
+
 //function creates the boxes for the game based on the difficulty, which is decides how many boxes to create. the random order for the game is also created
 function initializeGame(){
 	for (let i = 0; i<boxes; i++){
 		let box = document.createElement('div')
 		box.style.backgroundColor = boxColor[i]
 		box.className = boxPosition[i] 
-		// let boxNum = Math.random()
 		box.id = boxColor[i]
 		box.blinks = 0
 		box.addEventListener('click', press)
-		// boxNumber.push(boxNum)
 		main.appendChild(box)
 
 	}
@@ -44,21 +44,8 @@ function initializeGame(){
 }
 
 
+//buttons and functions that control game difficulty
 
-
-
-//create a box creator fiucntion to be called on button press
-
-//need to create functionality for easy(4), medium (8) hard(12), to change the number of boxes created
-
-//start button. in this iteration it will just test to see if the functionilty of cycling through different boxes works
-
-// let startButton = document.querySelector(".start")
-// startButton.addEventListener("click", startGame)
-
-
-
-//added all of the buttons that control the iniatilizing of the game and the game difficulty
 let difficulty = document.querySelectorAll(".difficult")
 
 
@@ -150,7 +137,7 @@ function hideDifficultyButtons(){
 		inGameButtons[k].style.visibility = "visible"
 	}
 }
-//Brings buttons bacxk after a reset
+//Brings buttons back after a reset
 function restoreButtons(){
 	chooseDiff.style.display = ""
 	for(let j = 1; j < difficulty.length	; j++){
@@ -162,10 +149,7 @@ function restoreButtons(){
 	}
 }
 
-
-
-//Start game function begins game. start game looks in the box number array, which has the randomized order, grabs the number at the index that corresponds with the turn, and uses that to select which box, based on that index in the box position array
-
+//function to change the color of the boxes and cycle through the sequence
 
 function changeColor(){
 
@@ -178,12 +162,10 @@ function changeColor(){
 	let glowBox = document.querySelector(`.${selectBox}`)
 	if (glowBox.style.backgroundColor != "white"){
 			glowBox.style.backgroundColor = "white"
-			// glowBox.blinks ++	
+			
 		}else{
 			glowBox.style.backgroundColor = `${glowBox.id}`
-// 			glowBox.blinks ++
-// 			console.log(glowBox.style.backgroundColor)
-// 			console.log(glowBox.blinks)	
+// 				
 	}
 	counter += .5
 	
