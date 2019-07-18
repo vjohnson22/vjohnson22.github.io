@@ -1,0 +1,159 @@
+body {
+	height: 800px;
+	display: grid;
+	grid-template-rows: 1fr 7fr 1fr;
+	grid-template-columns: 1fr 4fr 1fr;
+}
+
+header {
+	grid-column: 2;
+	grid-row: 1;
+	text-align: center;
+
+}
+.left {
+	grid-row: 2 / span 1;
+
+}
+main {
+	border: 4px solid black;
+	grid-column: 2/ span 1;
+	grid-row: 2/ span 1;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	background-color: white;
+	border-radius: 20px;
+
+}
+main * {
+	border: 4px solid black;
+	border-radius: 20px;
+	margin: 5px
+}
+.right {
+	
+	grid-row: 2;
+	text-align: center;
+}
+footer {
+	
+	grid-column: 2 / span 1;
+	grid-row: 3;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+
+}
+
+.zero{
+	grid-row: 2 / span 1;
+	grid-column: 2/ span 1;
+}
+
+.one{
+	grid-row: 2 / span 1;
+	grid-column: 3/ span 1;
+}
+.two{
+	grid-row: 3 / span 1;
+	grid-column: 2/ span 1;
+}
+.three{
+	grid-row: 3 / span 1;
+	grid-column: 3/ span 1;
+}
+.four{
+	grid-row: 1 / span 1;
+	grid-column: 2/ span 1;
+}
+
+.five{
+	grid-row: 1 / span 1;
+	grid-column: 3/ span 1;
+}
+.six{
+	grid-row: 4 / span 1;
+	grid-column: 2/ span 1;
+}
+.seven{
+	grid-row: 4 / span 1;
+	grid-column: 3/ span 1;
+}
+.eight{
+	grid-row: 1 / span 1;
+	grid-column: 1/ span 1;
+}
+
+.nine{
+	grid-row: 2 / span 1;
+	grid-column: 1/ span 1;
+}
+.ten{
+	grid-row: 3 / span 1;
+	grid-column: 1/ span 1;
+}
+.eleven{
+	grid-row: 4 / span 1;
+	grid-column: 1/ span 1;
+}
+.twelve{
+	grid-row: 1 / span 1;
+	grid-column: 4/ span 1;
+}
+
+.thirteen{
+	grid-row: 2 / span 1;
+	grid-column: 4/ span 1;
+}
+.fourteen{
+	grid-row: 3 / span 1;
+	grid-column: 4/ span 1;
+}
+.fifteen{
+	grid-row: 4 / span 1;
+	grid-column: 4/ span 1;
+}
+
+.inGame {
+	visibility: hidden;
+}
+.score {
+	display: inline;
+
+}
+.buttons {
+	padding: 10px;
+}
+.difficult {
+	margin: 0 auto;
+}
+ul {
+
+	list-style: none;
+	padding: 0;
+}
+li {
+	font-size: 35px
+
+}
+
+@media (max-width: 700px){
+	.full-screen {
+		width: 100%;
+	}
+	.tall{
+		height: 400px;
+		margin: 0 auto;
+	}
+	.foot {
+		margin: 0 0 100px 0 ;
+	}
+	.gone {
+		display: none;
+	}
+	.body {
+		height: 700px
+	}
+}
