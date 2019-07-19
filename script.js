@@ -215,7 +215,8 @@ function press(){
 }
 let scoreArray = []
 
-//to adds the score to the scoreboard and re-sorts each time
+// adds the score to the scoreboard and re-sorts each time
+
 function addHighScore(){
 		
 	if(scoreBoard.childElementCount > 0){
@@ -243,7 +244,6 @@ function addHighScore(){
 
 	}
 
-		// scoreArray = scoreArray.sort()
 
 		
 		
@@ -254,5 +254,3 @@ function addHighScore(){
 			scoreBoard.appendChild(li)
 		}
 	}
-// 	}
-// }
